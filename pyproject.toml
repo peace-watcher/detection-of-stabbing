@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "model-server"
+version = "0.1.0"
+description = ""
+authors = ["nahee-park <jessica396@ewhain.net>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+fastapi = "^0.111.0"
+uvicorn = "^0.29.0"
+python-multipart = "^0.0.9"
+opencv-python-headless = "^4.9.0.80"
+numpy = "^1.26.4"
+pillow = "^10.3.0"
+groundingdino = { path = "./GroundingDINO", develop = true }
+torch = "^1.12.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+
