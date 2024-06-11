@@ -36,7 +36,7 @@ html = """
 <img id="videoElement">
 <script>
     var img = document.getElementById("videoElement");
-    var ws = new WebSocket("ws://localhost:8000/ws");
+    var ws = new WebSocket("ws://107.167.183.252:8000/ws");
     ws.onmessage = function(event) {
         img.src = "data:image/jpeg;base64," + event.data;
     };
