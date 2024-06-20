@@ -106,6 +106,7 @@ async def get():
 async def websocket_endpoint(websocket: WebSocket):
     global alert_sent  # 전역 변수로 선언
 
+
     await websocket.accept()
     try:
         while True:
@@ -148,19 +149,20 @@ async def websocket_endpoint(websocket: WebSocket):
                 boxes, logits, phrases = predict(
                     model=model,
                     image=image_tensor,
-                    caption="a person with a knife, fallen person, person running away",
-                    box_threshold=0.35,
+                    caption="a person holding a knife",
+                    box_threshold=0.3,
                     text_threshold=0.25
                 )
+                print("phrases", phrases)
 
                 # 바운딩 박스 그리기
                 annotated_frame = annotate(image_source=image_source, boxes=boxes, logits=logits, phrases=phrases)
 
                 # 탐지 결과를 큐에 추가
-                detections_queue.append("a knife" in phrases)
+                detections_queue.append("knife" in phrases)
 
                 # 최근 8프레임 모두에서 "knife" 탐지 시 ALERT 전송 (한 번만)
-                if not alert_sent and detections_queue.count(True) == 10:
+                if not alert_sent and detections_queue.count(True) == 8:
                     await websocket.send_text("ALERT")
                     alert_sent = True
 
@@ -176,6 +178,7 @@ async def websocket_endpoint(websocket: WebSocket):
             except Exception as e:
                 print("Error processing image:", e)
     finally:
+        alert_sent = False
         await websocket.close()
 
 if __name__ == "__main__":
