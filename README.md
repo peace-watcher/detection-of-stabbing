@@ -1,4 +1,4 @@
-# Grounding DINO Python Server
+# Grounding DINO Real Time Detection Server
 
 ## 🪧 About Source Code
 
