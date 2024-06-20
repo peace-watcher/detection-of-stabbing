@@ -95,3 +95,26 @@ export LD_LIBRARY_PATH=/usr/local/cuda-11.3/lib64:$LD_LIBRARY_PATH
 ```bash
 uvicorn src.main:app --reload --host 0.0.0.0 --port 8000
 ```
+
+## 📚 Open Source Projects Used
+
+Our Grounding DINO server utilizes the following open source projects:
+
+1. [**Grounding DINO**](https://github.com/IDEA-Research/GroundingDINO.git):
+    - Grounding DINO is an open-source project developed by IDEA-Research for object detection using a transformer-based approach.
+    - We have cloned this repository and installed its requirements to integrate its capabilities into our server.
+    - This project forms the core of our detection system, leveraging state-of-the-art techniques for accurate and efficient object detection.
+2. [**FastAPI**](https://github.com/tiangolo/fastapi):
+    - FastAPI is a modern, fast (high-performance), web framework for building APIs with Python 3.6+ based on standard Python type hints.
+    - We use FastAPI to build the backend of our server, enabling us to create a robust and efficient API for our application.
+3. [**Uvicorn**](https://github.com/encode/uvicorn):
+    - Uvicorn is a lightning-fast ASGI server implementation, using `uvloop` and `httptools`.
+    - It is used to run our FastAPI application, providing high performance and support for async programming.
+4. [**Torch**](https://github.com/pytorch/pytorch):
+    - Torch is an open-source machine learning library, primarily developed by Facebook's AI Research lab (FAIR).
+    - We use Torch and its companion library, torchvision, for implementing deep learning models and handling computer vision tasks.
+5. [**OpenCV**](https://github.com/opencv/opencv):
+    - OpenCV (Open Source Computer Vision Library) is an open-source computer vision and machine learning software library.
+    - OpenCV is utilized for various image processing tasks in our server.
+
+These open-source projects are essential components of our Grounding DINO server, providing the necessary tools and frameworks to achieve our objectives.
