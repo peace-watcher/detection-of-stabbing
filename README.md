@@ -1,4 +1,4 @@
-# Grounding DINO Real Time Detection Server
+# Grounding DINO Real Time Weapon Attack Detection Server
 
 ## 🪧 About Source Code
 
